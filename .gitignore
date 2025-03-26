@@ -1,0 +1,10 @@
+**/__pycache__/
+
+log/
+results_model/
+saved_checkpoints/
+lora_model/
+visualization/image/
+
+cmd/*
+!cmd/cmd_*
