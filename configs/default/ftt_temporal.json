@@ -1,0 +1,29 @@
+{
+    "ftt_temporal": {
+        "model": {
+            "token_bias": true,
+            "n_layers": 1,
+            "d_token": 32,
+            "n_heads": 8,
+            "d_ffn_factor": 1.3333333333333333,
+            "attention_dropout": 0.2,
+            "ffn_dropout": 0.1,
+            "residual_dropout": 0.0,
+            "activation": "reglu",
+            "prenormalization": false,
+            "initialization": "kaiming",
+            "kv_compression": null,
+            "kv_compression_sharing": null,
+            "temporal_embeddings": {
+                "order": [1, 1, 1, 1],
+                "trend": true,
+                "d_embedding": 8
+            }
+        },
+        "training": {
+            "lr": 0.0001,
+            "weight_decay": 1e-05
+        },
+        "general": {}
+    }
+}

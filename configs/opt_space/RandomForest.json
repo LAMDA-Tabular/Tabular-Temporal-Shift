@@ -1,0 +1,11 @@
+{
+    "RandomForest": {
+        "model": {
+            "max_features": ["categorical", ["sqrt", "log2", 1.0, 0.5, 0.25]],
+            "max_depth": ["$step_int", 10, 110, 20],
+            "min_samples_split": ["$step_int", 2, 10, 2],
+            "min_samples_leaf": ["int", 1, 4]
+        },
+        "fit": {}
+    }
+}

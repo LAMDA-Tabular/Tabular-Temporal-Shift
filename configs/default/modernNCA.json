@@ -1,0 +1,24 @@
+{
+    "modernNCA": {
+        "model": {
+            "dim": 128,
+            "dropout": 0.1,
+            "d_block": 512,
+            "n_blocks": 0,
+            "temperature": 1,
+            "num_embeddings": {
+                "type": "PLREmbeddings",
+                "n_frequencies": 8,
+                "frequency_scale": 0.05,
+                "d_embedding": 8,
+                "lite": true
+            },
+            "sample_rate": 0.05
+        },
+        "training": {
+            "lr": 0.01,
+            "weight_decay": 0.0002
+        },
+        "general": {}
+    }
+}

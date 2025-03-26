@@ -1,0 +1,12 @@
+{
+    "SGD": {
+        "model": {
+            "max_iter": 10000,
+            "penalty": "elasticnet",
+            "alpha": 0.0001, 
+            "power_t": 0.25,
+            "l1_ratio": 0.25
+        },
+        "fit": {}
+    }
+}

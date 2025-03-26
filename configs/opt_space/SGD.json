@@ -1,0 +1,10 @@
+{
+    "SGD": {
+        "model": {
+            "alpha": ["loguniform", 1e-05, 0.01],
+            "power_t": ["uniform", 0.0, 1.0],
+            "l1_ratio": ["uniform", 0.0, 1.0]
+        },
+        "fit": {}
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "mlp_temp_plr": {
+        "model": {
+            "d_layers": [384, 384],
+            "dropout": 0.1,
+            "temporal_embeddings": {
+                "n_frequencies": 8,
+                "frequency_scale": 0.05,
+                "d_embedding": 8
+            }
+        },
+        "training": {
+            "lr": 0.0003,
+            "weight_decay": 1e-05
+        },
+        "general": {}
+    }
+}

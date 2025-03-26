@@ -1,0 +1,22 @@
+{
+    "dcn2_temporal": {
+        "model": {
+            "d": ["$power_int", 7, 11],
+            "d_embedding": ["$power_int", 1, 5],
+            "hidden_dropout": ["?uniform", 0.0, 0.0, 0.5],
+            "cross_dropout": ["?uniform", 0.0, 0.0, 0.5],
+            "n_cross_layers": ["int", 1, 4],
+            "n_hidden_layers": ["int", 1, 4],
+            "temporal_embeddings": {
+                "order": ["$temporal_order", 4, 1, 7],
+                "trend": ["categorical", [true, false]],
+                "d_embedding": ["$power_int", 1, 5]
+            }
+        },
+        "training": {
+            "lr": ["loguniform", 1e-05, 0.001],
+            "weight_decay": ["?loguniform", 0.0, 1e-06, 0.001]
+        },
+        "general": {}
+    }
+}

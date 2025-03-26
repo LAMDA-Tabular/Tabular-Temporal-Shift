@@ -1,0 +1,21 @@
+{
+    "tabm": {
+        "model": {
+            "k": ["int", 32, 32],
+            "num_embeddings": {
+                "n_frequencies": ["$power_int", 1, 7],
+                "frequency_scale": ["loguniform", 0.01, 100.0],
+                "d_embedding": ["$power_int", 1, 5]
+            },
+            "backbone": {
+                "d_layers": ["$power_d_layers", 1, 4, 7, 11],
+                "dropout": ["?uniform", 0.0, 0.0, 0.75]
+            }
+        },
+        "training": {
+            "lr": ["loguniform", 1e-05, 0.001],
+            "weight_decay": ["?loguniform", 0.0, 1e-06, 0.001]
+        },
+        "general": {}
+    }
+}

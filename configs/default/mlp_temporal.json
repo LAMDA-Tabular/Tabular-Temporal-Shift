@@ -1,0 +1,18 @@
+{
+    "mlp_temporal": {
+        "model": {
+            "d_layers": [384, 384],
+            "dropout": 0.1,
+            "temporal_embeddings": {
+                "order": [1, 1, 1, 1],
+                "trend": true,
+                "d_embedding": 8
+            }
+        },
+        "training": {
+            "lr": 0.0003,
+            "weight_decay": 1e-05
+        },
+        "general": {}
+    }
+}

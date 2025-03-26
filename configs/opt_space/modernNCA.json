@@ -1,0 +1,21 @@
+{
+    "modernNCA": {
+        "model": {
+            "dropout": ["uniform", 0.0, 0.5],
+            "d_block": ["$power_int", 6, 11],
+            "n_blocks": ["int", 0, 2],
+            "dim": ["$power_int", 6, 11],
+            "sample_rate": ["uniform", 0.01, 0.5],
+            "num_embeddings": {
+                "n_frequencies": ["$power_int", 1, 7],
+                "frequency_scale": ["loguniform", 0.01, 100.0],
+                "d_embedding": ["$power_int", 1, 5]
+            }
+        },
+        "training": {
+            "lr": ["loguniform", 1e-05, 0.1],
+            "weight_decay": ["?loguniform", 0.0, 1e-06, 0.001]
+        },
+        "general": {}
+    }
+}
