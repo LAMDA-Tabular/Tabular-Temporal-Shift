@@ -17,7 +17,7 @@ To ensure the validity of random splitting, each group of random split experimen
 
 [2] Rubachev, I., Kartashev, N., Gorishniy, Y., and Babenko, A. Tabred: A benchmark of tabular machine learning in-the-wild. In ICLR, 2025.
 
-## Usage
+## Usage Instructions
 
 ### Deep method
 
@@ -25,13 +25,13 @@ For deep methods, run:
 
 ```bash
 python train_model_deep.py --dataset $DATASET_NAME \
-						   --enable_timestamp \
-						   --validate_option $VAL_OPTION \
-						   --model_type $MODEL_NAME \
-						   --cat_policy $CAT_POLICY \
-						   --temporal_policy $TEMPORAL_POLICY \
-						   --gpu 0 --max_epoch 200 --seed_num 15 \
-						   --tune --retune --n_trials 100
+                           --enable_timestamp \
+                           --validate_option $VAL_OPTION \
+                           --model_type $MODEL_NAME \
+                           --cat_policy $CAT_POLICY \
+                           --temporal_policy $TEMPORAL_POLICY \
+                           --gpu 0 --max_epoch 200 --seed_num 15 \
+                           --tune --retune --n_trials 100
 ```
 
 - `DATASET_NAME`: Dataset name in TabReD benchmark.
@@ -45,13 +45,13 @@ python train_model_deep.py --dataset $DATASET_NAME \
 
   ```bash
   choices=(
-  	holdout_last,                    # Original splitting strategy in TabReD
-  	holdout_foremost_sample,         # Our training protocol
-  	holdout_last_nobias_lag_sample,           # Split (a), w/  lag, w/o bias
-  	holdout_last_nobias_nolag_sample,         # Split (b), w/o lag, w/o bias
-  	holdout_last_bias_lag_sample,             # Split (c), w/  lag, w/  bias
-  	holdout_last_nobias_nolag_reverse_sample, # Split (d), w/o lag, w/o bias
-  	holdout_random_0,                # Random split 0
+      holdout_last,                    # Original splitting strategy in TabReD
+      holdout_foremost_sample,         # Our training protocol
+      holdout_last_nobias_lag_sample,           # Split (a), w/  lag, w/o bias
+      holdout_last_nobias_nolag_sample,         # Split (b), w/o lag, w/o bias
+      holdout_last_bias_lag_sample,             # Split (c), w/  lag, w/  bias
+      holdout_last_nobias_nolag_reverse_sample, # Split (d), w/o lag, w/o bias
+      holdout_random_0,                # Random split 0
       holdout_random_1,                # Random split 1
       holdout_random_2,                # Random split 2
   )
@@ -92,7 +92,7 @@ python train_model_deep.py --dataset $DATASET_NAME \
 
   ```bash
   choices=(
-  	indices,           # None in paper
+      indices,           # None in paper
       num,               # Num in paper
       time_num,          # Time in paper
   )
@@ -118,11 +118,11 @@ python train_model_classical.py --dataset $DATASET_NAME \
 
   ```bash
   choices=(
-  	XGBoost, 
-  	LightGBM, 
-  	CatBoost, 
-  	RandomForest, 
-  	SGD,           # Linear in paper. TabReD also adopts SGD as linear model.
+      XGBoost, 
+      LightGBM, 
+      CatBoost, 
+      RandomForest, 
+      SGD,           # Linear in paper. TabReD also adopts SGD as linear model.
   )
   ```
 
@@ -138,10 +138,6 @@ python train_model_classical.py --dataset $DATASET_NAME \
           ;;
   esac
   ```
-
-  
-
-  
 
 
 **Enjoy the code!** 
