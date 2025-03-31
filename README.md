@@ -2,20 +2,19 @@
 
 This paper is submitted to **ICML'25 (Submission 10139)**, under review.
 
-## Introduction
+## Additional Results
 
-We adopt training, evaluation and tuning setup from Ye et al [1]. We tune hyper-parameters using Optuna, performing 100 trials for most methods to identify the best configuration. The hyper-parameter search space follows exactly the settings in Rubachev et al [2]. Using these optimal hyper-parameters, each method is trained with 15 random seeds, and the average performance across seeds is reported. For all deep learning methods, we use a batch size of 1024 and
-AdamW as the optimizer.
+### Comparison of model performance under different protocols
 
-We followed Rubachev et al [2] and performed only 25 hyper-parameter tuning runs for FT-T and TabR, as these methods exhibit lower efficiency on datasets with large feature dimensions and sample sizes. For our temporal embedding, we conducted separate hyper-parameter searches for the periodic order and linear trend. However, since 25 tuning trials were insufficient to identify optimal hyper-parameters for the temporal embedding, we performed a global tuning of the temporal embedding order for FT-T and TabR.
+![fig1](fig/fig1.png)
 
-For classification tasks, we evaluate models using AUC (higher is better) as the primary metric and use RMSE (lower is better) for regression tasks to select the best-performing model during training on the validation set.
+![fig2](fig/fig2.png)
 
-To ensure the validity of random splitting, each group of random split experiments was tested on three distinct random splits, with 15 random seeds run on each split. The mean performance across these runs is reported as the final result. The variance of the random split is calculated based on all 45 results (3 splits × 15 seeds), as the random split is subject to variance from both the split selection and the running seeds during the training phase. This approach better reflects the overall stability of the standard procedure.
+**Above**: Performance comparison between temporal split in [1] and random split on TabReD benchmark, where only the data splitting strategy before $T_\text{train}$ is changed. The percentage change represents the **robust average** of performance difference compared to the MLP with temporal split. A positive percentage change indicates that the method outperforms the MLP with temporal split. Left: We reproduced the experiment from [1], and ensured a fair comparison by removing numerical embeddings and fixing the categorical embeddings to one-hot embedding when needed. In this case, the performance of retrieval-based methods significantly declines, falling behind tree-based methods and MLP-PLR, while TabM achieves the best performance. Right: The performance improvement observed when using the random splitting strategy. Retrieval-based methods show the greatest improvement, and the performance rankings of the models aligned more closely with conventional findings.
+**Bottom**: Performance comparison before and after adopting our proposed **temporal embedding** into our training protocol on the TabReD benchmark. **These two figures follow the same setup, allowing for direct comparison**.
 
-[1] Ye, H.-J., Liu, S.-Y., Cai, H.-R., Zhou, Q.-L., and Zhan, D.-C. A closer look at deep learning methods on tabular datasets. CoRR, abs/2407.00956, 2024.
+[1] Rubachev, I., Kartashev, N., Gorishniy, Y., and Babenko, A. Tabred: A benchmark of tabular machine learning in-the-wild. In ICLR, 2025.
 
-[2] Rubachev, I., Kartashev, N., Gorishniy, Y., and Babenko, A. Tabred: A benchmark of tabular machine learning in-the-wild. In ICLR, 2025.
 
 ## Usage Instructions
 
