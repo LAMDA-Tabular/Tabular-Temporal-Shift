@@ -25,14 +25,15 @@ Performance rankings of **original temporal split** in [1], **random split**, an
 
 Comparison of performance and stability between the **random split** and **our proposed temporal split**, measured by the **average percentage change** on the TabReD benchmark, along with the performance ranking of each method. "PLR," "MNCA," and "LGBM" denote "MLP-PLR," "ModernNCA," and "LightGBM," respectively. The percentage change represents the difference in the mean (higher is better) or the standard deviation (lower is better, indicating stability) of performance, relative to the baseline temporal split in [1], for each method. The results show that our temporal splitting strategy achieves performance comparable to the random split, while offering significantly better stability.
 
-### TabPFN v2 & Mambular
-
-
-
 ### How to perform temporal embedding
 
-(plug and play or backbone)
+![tab3](fig/tab3.png)
 
+### TabPFN v2 & Mambular
+
+![tab4](fig/tab4.png)
+
+---
 
 [1] Rubachev, I., Kartashev, N., Gorishniy, Y., and Babenko, A. Tabred: A benchmark of tabular machine learning in-the-wild. In ICLR, 2025.
 
