@@ -28,23 +28,25 @@ It is worth noting that although the relative improvement of TabM over MLP decre
 
 ![tab3](fig/tab3.png)
 
-**Table C.**
+**Table C.** When using **adjustable** cycles, the performance comparison with no temporal information (**none**) and our temporal embedding (**fixed**) shows that ModernNCA experiences a performance drop of -2.48%, trailing behind the fixed cycle temporal embedding (+0.30%). This highlights that, in temporal shift scenarios, tuning cycles based on the validation set is less reliable than using fixed prior cycles.
 
 ### How to perform temporal embedding
 
 ![tab4](fig/tab4.png)
 
-**Table D.**
+**Table D.** The performance comparison between the temporal embedding used in our paper and directly feeding the temporal encoding into the model backbone. All three methods show improvement, indicating that there may be incompatibility between the temporal embedding and numerical embedding.
 
 ### TabPFN v2 & Mambular
 
 ![tab5](fig/tab5.png)
 
-**Table E.**
+**Table E.** The performance comparison of the autoregressive method Mambular [2] and the ICL method TabPFN v2 [3] under different splits. Mambular shows a more significant performance improvement under our split. For TabPFN v2, since no training is required, we modified the context selection: 10,000 contexts were randomly chosen (Original) and the last 10,000 samples were selected as the context (Ours). The results also show a performance improvement.
 
 ---
 
 [1] Rubachev, I., Kartashev, N., Gorishniy, Y., and Babenko, A. Tabred: A benchmark of tabular machine learning in-the-wild. In ICLR, 2025.
+[2] Thielmann, Anton Frederik, et al. Mambular: A sequential model for tabular deep learning. arXiv preprint arXiv:2408.06291.
+[3] Hollmann, Noah, et al. Accurate predictions on small data with a tabular foundation model. Nature 637.8045 (2025): 319-326.
 
 
 ## Usage Instructions
