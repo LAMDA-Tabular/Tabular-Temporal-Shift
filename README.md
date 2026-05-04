@@ -1,6 +1,19 @@
 # Understanding the Limits of Deep Tabular Methods with Temporal Shift
 
-This [paper](https://arxiv.org/abs/2502.20260) is accepted by **ICML'25**. 🎉
+This is the official code repository for our ICML 2025 paper, **Understanding the Limits of Deep Tabular Methods with Temporal Shift**.
+
+If you find this repository useful, please cite:
+
+```bibtex
+@inproceedings{cai2025understanding,
+  author       = {Hao-Run Cai and
+                  Han-Jia Ye},
+  title        = {Understanding the Limits of Deep Tabular Methods with Temporal Shift},
+  booktitle    = {{ICML}},
+  pages        = {6366--6386},
+  year         = {2025}
+}
+```
 
 ## Usage Instructions
 
